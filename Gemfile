@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'nokogiri'
+
 # PostgreSQL driver
 gem 'pg'
 
@@ -9,6 +11,8 @@ gem 'sinatra-contrib'
 
 gem 'activesupport', '~>5.1.2'
 gem 'activerecord', '~>5.1.2'
+
+gem 'bcrypt'
 
 gem 'rake'
 
