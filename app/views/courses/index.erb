@@ -1,6 +1,9 @@
 <h1>Submitted Courses</h1>
 <ul class="course_list">
 <% @courses.each do |course| %>
-<li><a href="https://supermariomakerbookmark.nintendo.net/courses/<%=course.bookmark%>"><%= course.title %></a></li>
+<li>
+<a href="https://supermariomakerbookmark.nintendo.net/courses/<%=course.bookmark%>"><%= course.title %></a>
+<br><%= Challenge.find(course.challenge_id).theme %>
+</li>
 <% end %>
 </ul>
