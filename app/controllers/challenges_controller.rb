@@ -16,3 +16,9 @@ post '/challenges' do
     erb :'challenges/new' # show new challenges view again(potentially displaying errors)
   end
 end
+
+get '/challenges/:id' do
+  #gets params from url
+  @challenge = Challenge.find(params[:id]) #define instance variable for view
+  erb :'challenges/show' #show single challenge view
+end

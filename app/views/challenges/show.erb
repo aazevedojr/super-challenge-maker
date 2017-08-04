@@ -1,0 +1,19 @@
+<h1><%= @challenge.theme %></h1>
+<h2>Guidelines:</h2>
+<%= @challenge.guidelines %>
+<h2>Course submission deadline:</h2>
+<%= @challenge.course_submissions_deadline %>
+<h2>Courses submitted:</h2>
+<ul class="course_list">
+<% @challenge.courses.each do |course| %>
+<li><a href="https://supermariomakerbookmark.nintendo.net/courses/<%=course.bookmark%>"><%= course.title %></a></li>
+<% end %>
+</ul>
+<h2>Submit a course:</h2>
+<%= @errors %>
+<form action="/courses" method="post">
+  <input type="hidden" name="challenge_id" value="<%= @challenge.id %>">
+  <input type="text" name="bookmark" placeholder="COURSE ID">
+  <br>
+  <input type="submit" name="submit" value="Register Course">
+</form>

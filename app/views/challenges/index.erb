@@ -1,5 +1,18 @@
 <h1>Challenges</h1>
-<ul id="challenge_list">
+<h2>Open for course submission:</h2>
+<ul class="challenge_list">
+<% @challenges.each do |challenge| %>
+<li><a href="/challenges/<%= challenge.id %>"><%= challenge.theme %></a></li>
+<% end %>
+</ul>
+<h2>Open for rating and feedback:</h2>
+<ul class="challenge_list">
+<% @challenges.each do |challenge| %>
+<li><a href="xxx"><%= challenge.theme %></a></li>
+<% end %>
+</ul>
+<h2>Closed:</h2>
+<ul class="challenge_list">
 <% @challenges.each do |challenge| %>
 <li><a href="xxx"><%= challenge.theme %></a></li>
 <% end %>

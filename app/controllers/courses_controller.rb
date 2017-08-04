@@ -19,14 +19,17 @@ post '/courses' do
     #creator_name = doc.css('.creator-info .name')[0].content
     course_title = doc.css('.course-title')[0].content
 
-    @course = Course.new(bookmark: bookmark, title: course_title) #create new course
+    @challenge = Challenge.find(params[:challenge_id])
+    @course = @challenge.courses.new(bookmark: bookmark, title: course_title)
 
-    if @course.save #saves new course or returns false if unsuccessful
-      redirect '/courses' #redirect back to courses index page
+    if @course.save
+      redirect "/challenges/#{@challenge.id}"
     else
-      erb :'courses/new', locals: {errors: "#{bookmark} is already registered."}
+      @errors = "#{params[:bookmark]} is already registered."
+      erb :"challenges/#{@challenge.id}"
     end
-  rescue #Errno::ENOENT
-    erb :'courses/new', locals: {errors: "#{bookmark} is not a course."}
+  rescue
+    @errors = "#{params[:bookmark]} is not a course."
+    erb :"challenges/#{@challenge.id}"
   end
 end
