@@ -1,13 +1,10 @@
 get '/courses' do
-
-  Course.first.title
-
+  @courses = Course.all #define instance variable for view
+  erb :'courses/index' #show all courses view (index)
 end
 
 get '/courses/new' do
-
   erb :'courses/new' #show new courses view
-
 end
 
 def to_url(code)
@@ -29,7 +26,7 @@ post '/courses' do
     else
       erb :'courses/new', locals: {errors: "#{bookmark} is already registered."}
     end
-  rescue Errno::ENOENT
+  rescue #Errno::ENOENT
     erb :'courses/new', locals: {errors: "#{bookmark} is not a course."}
   end
 end
