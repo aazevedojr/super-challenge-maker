@@ -1,7 +1,65 @@
 body {
-  background-color: #ecbb00;
+  background-color: #086a9a;
   font-family: Helvetica;
+}
+
+header {
   color: white;
-  margin-left: 80px;
-  margin-top: 60px
+  padding: 4px;
+  padding-left: 20px;
+  background-color: #303c44;
+}
+
+header a {
+  color: white;
+}
+
+nav {
+  position: fixed;
+  right: 20px;
+  top: 10px;
+  font-size: 1.1em;
+}
+
+nav li {
+  display: inline;
+}
+
+.container {
+  margin: 8% 16%;
+  background-color: #f9db00;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.errors {
+  color: red;
+}
+
+input {
+  margin: 3px;
+  border-radius: 10px;
+}
+
+.upcoming-potlucks li {
+  text-align: left;
+}
+
+.upcoming-potlucks a {
+  font-size: 1.4em;
+}
+
+.upcoming-potlucks p {
+  font-style: italic;
+}
+
+.button-like {
+    text-decoration: none;
+    display: inline-block; padding: 2px 8px;
+    border-style: solid; border-width: 1px;
 }
