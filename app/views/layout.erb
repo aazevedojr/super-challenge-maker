@@ -18,6 +18,10 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <%= erb :_header %>
+  <div class="container">
+    <%= erb :_errors %>
+    <%= yield %>
+  </div>
 </body>
 </html>
