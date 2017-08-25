@@ -4,21 +4,39 @@ body {
 }
 
 header {
+  position: fixed;
+  top: 0;
   color: white;
   padding: 4px;
   padding-left: 20px;
-  background-color: #303c44;
+  background-color: #283138;
+  width: 100%;
 }
 
 header a {
   color: white;
+  text-decoration: none;
 }
 
-nav {
+header a:link {
+  color: white;
+  text-shadow: -2px 2px #086a9a;
+  text-decoration-line: none;
+}
+
+header a:visited {
+  color: white;
+}
+
+header a:hover {
+    text-shadow: 2px -2px #086a9a;
+}
+
+header nav {
   position: fixed;
   right: 20px;
   top: 10px;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 nav li {
@@ -31,6 +49,7 @@ nav li {
   text-align: center;
   padding: 20px;
   border-radius: 10px;
+  margin-top: 160px;
 }
 
 ul {
@@ -59,7 +78,17 @@ input {
 }
 
 .button-like {
-    text-decoration: none;
-    display: inline-block; padding: 2px 8px;
-    border-style: solid; border-width: 1px;
+  text-decoration: none;
+  display: inline-block; padding: 2px 8px;
+  border-style: solid; border-width: 1px;
+}
+
+footer {
+  color: white;
+  font-size: .9em;
+  background-color: #303c44;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
 }
