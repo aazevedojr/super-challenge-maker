@@ -1,0 +1,4 @@
+<h2><%= @user.username %></h2>
+<% @user.courses.each do |course| %>
+  <a href=<%= course.url %>><%= course.title %></a>
+<% end %>
