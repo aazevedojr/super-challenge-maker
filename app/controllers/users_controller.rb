@@ -1,3 +1,8 @@
+get '/users' do
+  @users = User.all
+  erb :'users/index'
+end
+
 get '/register' do
   erb :'users/new'
 end
@@ -11,4 +16,9 @@ post '/register' do
     @errors = @user.errors.full_messages
     erb :'/users/new'
   end
+end
+
+get '/users/:id' do
+  @user = User.find(params[:id])
+  erb :'users/show'
 end

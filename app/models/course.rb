@@ -5,4 +5,8 @@ class Course < ActiveRecord::Base
 
   validates :bookmark, {uniqueness: true, presence: true}
   validates :title, {presence: true}
+
+  def url
+    "https://supermariomakerbookmark.nintendo.net/courses/" + self.bookmark
+  end
 end
